@@ -1,0 +1,49 @@
+#accueil_part_1{
+    background-color: #f6f6f6;
+    padding-bottom: 20px;
+    #accueil_part_1_1{
+        p{
+            text-align: center;
+            background-color: #eaeaea;
+            padding: 15px 0;
+            border-top: 2px solid #cecece;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            color: #353535;
+            &::before{
+                font-family: 'Font Awesome 5 Free';
+                content: "\f81d";   
+            }
+        }
+    }
+    #accueil_part_1_2{
+        h2{
+            margin-top: 20px;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        p{
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            color: #7d7d7d;
+            margin-bottom: 20px;
+        }
+        button{
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #d86cdb;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            border-radius: 25px;
+            width: 250px;
+        }
+    }
+}
