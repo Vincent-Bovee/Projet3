@@ -1,0 +1,57 @@
+#menu_part_2{
+    display: block;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: auto;
+    width: auto;
+    margin-top: -20px;
+    padding: 10px;
+    z-index: 9;
+    background-color: #f6f6f6;
+    h3{
+        line-height: 35px;
+        border-bottom: 1px solid #99e2d0;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+        color: #7b7b7b;
+        width: 40px;
+    }
+    .carte_menu{
+        width: auto;
+        padding: 5px 10px;
+        margin: 5px 0;
+        background-color: white;
+        .nom_du_menu{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .description_du_menu{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 12px;
+            color: #404040;
+        }
+        .prix_du_menu{
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            float: right;
+            margin-top: -23px;
+        }
+    }
+    button{
+        display: block;
+        margin: 30px auto;
+        text-align: center;
+        background-color: #d86cdb;
+        border: none;
+        padding: 15px;
+        font-size: 18px;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        border-radius: 25px;
+        width: 150px;
+    }
+}

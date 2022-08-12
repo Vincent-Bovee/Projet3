@@ -1,18 +1,19 @@
 #accueil_part_2{
     h2{
         font-family: 'Roboto', sans-serif;
-        font-size: 28px;
+        font-size: 24px;
         font-weight: bold;
-        margin-left: 20px;
+        margin: 5px 30px;
     }
     div{
+        position: relative;
         display: flex;
         flex-direction: row;
-        gap: 25%;
+        gap: 10%;
         margin: 0 auto;
         background-color: #f6f6f6;
         height: 80px;
-        width: 90%;
+        width: 85%;
         border-radius: 25px;
         box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .2);
         margin-top: 20px;
@@ -22,12 +23,17 @@
             border-radius: 50%;
             width: 30px;
             height: 30px;
+            position: absolute;
             display: inline-flex;
             justify-content: center;
             align-items: center;
             color: white;
+            top: 23px;
+            left: -15px;
         }
-        p{
+        p:last-child{
+            margin-left: 40px;
+            line-height: 75px;
             font-family: 'Roboto', sans-serif;
             font-size: 18px;
         }

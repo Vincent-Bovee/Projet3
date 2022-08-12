@@ -346,14 +346,6 @@ template {
   margin: 0;
 }
 
-section {
-  margin: 50px 0px;
-}
-
-footer {
-  margin: 50px 0 0 0;
-}
-
 h1 {
   text-align: center;
   font-family: "Shrikhand", cursive;
@@ -363,41 +355,61 @@ h1 {
   font-family: "Roboto", sans-serif;
 }
 
-#accueil_part_1 {
-  background-color: #f6f6f6;
-  padding-bottom: 20px;
+#menu_part_1 #img_menu_part_1 {
+  width: auto;
+  height: 200px;
+  background: url(/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg) repeat center center;
+  background-size: cover;
+  z-index: 1;
 }
-#accueil_part_1 #accueil_part_1_1 p {
-  text-align: center;
-  background-color: #eaeaea;
-  padding: 15px 0;
-  border-top: 2px solid #cecece;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: #353535;
-}
-#accueil_part_1 #accueil_part_1_1 p::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f81d";
-}
-#accueil_part_1 #accueil_part_1_2 h2 {
-  margin-top: 20px;
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-size: 28px;
-  font-weight: bold;
-}
-#accueil_part_1 #accueil_part_1_2 p {
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  color: #7d7d7d;
-  margin-bottom: 20px;
-}
-#accueil_part_1 #accueil_part_1_2 button {
+
+#menu_part_2 {
   display: block;
-  margin: 0 auto;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  height: auto;
+  width: auto;
+  margin-top: -20px;
+  padding: 10px;
+  z-index: 9;
+  background-color: #f6f6f6;
+}
+#menu_part_2 h3 {
+  line-height: 35px;
+  border-bottom: 1px solid #99e2d0;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  color: #7b7b7b;
+  width: 40px;
+}
+#menu_part_2 .carte_menu {
+  width: auto;
+  padding: 5px 10px;
+  margin: 5px 0;
+  background-color: white;
+}
+#menu_part_2 .carte_menu .nom_du_menu {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+#menu_part_2 .carte_menu .description_du_menu {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  color: #404040;
+}
+#menu_part_2 .carte_menu .prix_du_menu {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  float: right;
+  margin-top: -23px;
+}
+#menu_part_2 button {
+  display: block;
+  margin: 30px auto;
   text-align: center;
   background-color: #d86cdb;
   border: none;
@@ -406,142 +418,7 @@ h1 {
   color: white;
   font-family: "Roboto", sans-serif;
   border-radius: 25px;
-  width: 250px;
-}
-
-#accueil_part_2 h2 {
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 5px 30px;
-}
-#accueil_part_2 div {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  gap: 10%;
-  margin: 0 auto;
-  background-color: #f6f6f6;
-  height: 80px;
-  width: 85%;
-  border-radius: 25px;
-  -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-          box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
-}
-#accueil_part_2 div .bulle {
-  font-family: "Roboto", sans-serif;
-  background-color: #9356dc;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: white;
-  top: 23px;
-  left: -15px;
-}
-#accueil_part_2 div p:last-child {
-  margin-left: 40px;
-  line-height: 75px;
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-}
-#accueil_part_2 div #txt_accueil_part_2_1::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f81d";
-}
-#accueil_part_2 div #txt_accueil_part_2_2::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f81d";
-}
-#accueil_part_2 div #txt_accueil_part_2_3::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f81d";
-}
-
-#accueil_part_3 h2 {
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 5px 30px;
-}
-#accueil_part_3 #container_carte {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 20px;
-}
-#accueil_part_3 #container_carte .carte {
-  display: block;
-  margin: 0 auto;
-  background-color: white;
-  padding: 5px;
-  border-radius: 15px;
-  height: 250px;
-  width: 85%;
-  -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-          box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-}
-#accueil_part_3 #container_carte .carte .img_carte {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  width: 100%;
-  height: 78%;
-}
-#accueil_part_3 #container_carte .carte #restaurants_img1 {
-  background: url(/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg) repeat center center;
-  background-size: cover;
-}
-#accueil_part_3 #container_carte .carte #restaurants_img2 {
-  background: url(/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg) repeat center center;
-  background-size: cover;
-}
-#accueil_part_3 #container_carte .carte #restaurants_img3 {
-  background: url(/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg) repeat center center;
-  background-size: cover;
-}
-#accueil_part_3 #container_carte .carte #restaurants_img4 {
-  background: url(/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg) repeat center center;
-  background-size: cover;
-}
-#accueil_part_3 #container_carte .carte h4 {
-  margin: 10px 0 0 5px;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-}
-#accueil_part_3 #container_carte .carte p {
-  margin: 5px 0 0 5px;
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
-}
-#accueil_part_3 #container_carte .carte button {
-  float: right;
-  margin-top: -40px;
-  font-family: "Font Awesome 5 Free";
-  font-size: 30px;
-  border: none;
-}
-#accueil_part_3 #container_carte .carte button::hover {
-  font-weight: bold;
-  color: red;
+  width: 150px;
 }
 
 footer {
