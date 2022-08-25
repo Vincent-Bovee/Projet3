@@ -8,10 +8,16 @@
 
     #container_carte{
         display: flex;
-        flex-direction: column;
+        margin: 30px;
+        flex-direction: row;
         gap: 20px;
-
+        @media (orientation: portrait) {
+            flex-direction: column;
+            margin: 0 auto;
+        }
         .carte{
+            opacity: 0;
+            transform: translateY(10px);
             display: block;
             margin: 0 auto;
             background-color: white;
@@ -20,6 +26,9 @@
             height: 250px;
             width: 85%;
             box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .2);
+            a{
+                text-decoration: none;
+            }
             .img_carte{
                 border-top-left-radius: 10px;
                 border-top-right-radius: 10px;
@@ -43,11 +52,13 @@
                 background-size: cover;
             }
             h4{
+                color: black;
                 margin: 10px 0 0 5px;
                 font-family: 'Roboto', sans-serif;
                 font-size: 16px;
             }
             p{
+                color: black;
                 margin: 5px 0 0 5px;
                 font-family: 'Roboto', sans-serif;
                 font-size: 14px;
@@ -58,11 +69,112 @@
                 font-family: 'Font Awesome 5 Free';
                 font-size: 30px;
                 border: none;
-                &::hover{
-                    font-weight: bold;
-                    color: red;
+                i{
+                    &:hover{
+                        background-color: linear-gradient(#ff66cc, #9966cc);
+                        font-weight: bold;
+                        // transition: color 1s ease font-weight 1s ease;
+                        animation-name: i_hover;
+                        animation-duration: 0.75s;
+                        animation-timing-function: ease;
+                        animation-iteration-count: 1;   
+                        animation-fill-mode: forwards;
+                    }
+                    @keyframes i_hover {
+                        50% {
+                            transform: scale(1.2);
+                        }
+                        100% {
+                            transform: scale(1);
+                            // font-weight: normal;
+                            // color: linear-gradient(#ff66cc, #9966cc);
+                        }
+                    }
+                }
+            }
+
+            @for $i from 1 through 4 {
+                &:nth-of-type(#{$i}){
+                    animation-name: carte_menu_apparition;
+                    animation-delay: 2s + ($i / 2);
+                    animation-duration: 1s;
+                    animation-timing-function: ease;
+                    animation-iteration-count: 1;   
+                    animation-fill-mode: forwards;
+                }
+            }
+
+
+            @keyframes carte_menu_apparition {
+                0%{
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                100%{
+                    opacity: 1;
+                    transform: translateY(0px);
                 }
             }
         }
     }
+      
+}               
+.loader {
+    position: fixed;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    animation: loader 1.2s forwards;
 }
+
+.lds_ring {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    margin-top: calc(50% - 40px);
+  }
+  .lds_ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #000;
+    border-radius: 50%;
+    animation: lds_ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) 2 forwards;
+    border-color: #000 transparent transparent transparent;
+  }
+  .lds_ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds_ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds_ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds_ring{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+  }
+  @keyframes loader {
+    0% {
+    }
+    90% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+  }

@@ -1,13 +1,36 @@
+h2{
+    margin: 20px;
+    font-size: 24px;
+    font-family: 'Shrikhand', cursive;
+    i{
+        float: right;
+        font-family: 'Font Awesome 5 Free';
+        font-size: 25px;
+        font-weight: 100;
+    }
+}
+
 #menu_part_2{
-    display: block;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+
     height: auto;
     width: auto;
-    margin-top: -20px;
     padding: 10px;
     z-index: 9;
     background-color: #f6f6f6;
+    margin-top: -25px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    #menu{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        @media (orientation: portrait) {
+            flex-direction: column;
+        }
+    }
+    .contain_menu{
+        width: 100%;
+    }
     h3{
         line-height: 35px;
         border-bottom: 1px solid #99e2d0;
@@ -16,42 +39,168 @@
         font-family: 'Roboto', sans-serif;
         color: #7b7b7b;
         width: 40px;
+        margin-left: 15px;
+    }
+    @for $i from 1 through 4 {
+        #menu_entrees_#{$i}{
+            opacity: 0;
+            transform: translateY(10px);
+            animation-name: carte_menu_apparition;
+            animation-delay: #{$i / 4}s;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+            animation-iteration-count: 1;   
+            animation-fill-mode: forwards;
+        }
+        #menu_plats_#{$i}{
+            opacity: 0;
+            transform: translateY(10px);
+            animation-name: carte_menu_apparition;
+            animation-delay: #{$i / 4 + 0.75}s;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+            animation-iteration-count: 1;   
+            animation-fill-mode: forwards;
+        }
+        #menu_desserts_#{$i}{
+            opacity: 0;
+            transform: translateY(10px);
+            animation-name: carte_menu_apparition;
+            animation-delay: #{$i / 4 + 1.5}s;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+            animation-iteration-count: 1;   
+            animation-fill-mode: forwards;
+        }
+    }
+    @keyframes carte_menu_apparition {
+        0%{
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0px);
+        }
     }
     .carte_menu{
         width: auto;
-        padding: 5px 10px;
-        margin: 5px 0;
+        margin: 10px;
+        border-radius: 10px;
         background-color: white;
-        .nom_du_menu{
-            font-family: 'Roboto', sans-serif;
-            font-weight: 600;
-            font-size: 14px;
-        }
-        .description_du_menu{
-            font-family: 'Roboto', sans-serif;
-            font-weight: 300;
-            font-size: 12px;
-            color: #404040;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, 0.2);
+        display: flex;
+        flex-direction: row;    
+        justify-content: space-between;
+
+
+        &:hover{
+            .contenu{
+                animation-name: carte_menu_hover;
+                animation-duration: 0.35s;
+                animation-timing-function: ease;
+                animation-iteration-count: 1;   
+                animation-fill-mode: forwards;
+            }
+            .icon{
+                animation-name: icon_hover;
+                animation-duration: 0.35s;
+                animation-timing-function: ease;
+                animation-iteration-count: 1;   
+                animation-fill-mode: forwards;
+            }
+            i{
+                animation-name: check;
+                animation-duration: 0.5s;
+                animation-timing-function: ease;
+                animation-iteration-count: 1;   
+                animation-fill-mode: forwards;
+                animation-delay: 0s;
+            }
+        }    
+        .contenu{
+            width: 95%;
+            padding: 5px 10px;
+            display: flex;
+            flex-direction: column;    
+            .nom_du_menu{
+                font-family: 'Roboto', sans-serif;
+                font-weight: 600;
+                font-size: 14px;
+            }
+            .description_du_menu{
+                font-family: 'Roboto', sans-serif;
+                font-weight: 300;
+                font-size: 12px;
+                color: #404040;
+            }
         }
         .prix_du_menu{
+            width: 40px;
+            margin-top: 12px;
             font-family: 'Roboto', sans-serif;
             font-weight: 600;
             font-size: 14px;
-            float: right;
-            margin-top: -23px;
+        }
+        .icon{
+            width: 0%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background-color: #99e2d0;
+            overflow: hidden;
+    
+            i{
+                width: 15px;
+                height: 15px;
+                position: absolute;
+                display: inline-flex;
+                align-items: center;
+                top: 15%;
+                color: white;
+                font-family: 'Font Awesome 5 Free';
+                font-size: 15px;
+                background-color: white;
+                border-radius: 50%;
+                padding: 5px;
+                color: #99e2d0;
+            }
         }
     }
-    button{
-        display: block;
-        margin: 30px auto;
-        text-align: center;
-        background-color: #d86cdb;
-        border: none;
-        padding: 15px;
-        font-size: 18px;
-        color: white;
-        font-family: 'Roboto', sans-serif;
-        border-radius: 25px;
-        width: 150px;
+}
+
+button{
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    background: linear-gradient(#ff66cc, #9966cc);
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 25px;
+    width: 150px;
+}
+
+
+@keyframes carte_menu_hover {
+    100%{
+        width: 80%;
+    }
+}
+@keyframes icon_hover {
+    100%{
+        width: 15%;
+    }
+}
+@keyframes check {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
     }
 }

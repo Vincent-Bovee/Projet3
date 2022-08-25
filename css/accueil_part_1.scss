@@ -11,10 +11,6 @@
             font-weight: 500;
             font-size: 16px;
             color: #353535;
-            &::before{
-                font-family: 'Font Awesome 5 Free';
-                content: "\f81d";   
-            }
         }
     }
     #accueil_part_1_2{
@@ -36,7 +32,7 @@
             display: block;
             margin: 0 auto;
             text-align: center;
-            background-color: #d86cdb;
+            background: linear-gradient(#ff66cc, #9966cc);
             border: none;
             padding: 15px;
             font-size: 18px;

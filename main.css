@@ -377,10 +377,6 @@ h1 {
   font-size: 16px;
   color: #353535;
 }
-#accueil_part_1 #accueil_part_1_1 p::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f81d";
-}
 #accueil_part_1 #accueil_part_1_2 h2 {
   margin-top: 20px;
   text-align: center;
@@ -399,7 +395,8 @@ h1 {
   display: block;
   margin: 0 auto;
   text-align: center;
-  background-color: #d86cdb;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff66cc), to(#9966cc));
+  background: linear-gradient(#ff66cc, #9966cc);
   border: none;
   padding: 15px;
   font-size: 18px;
@@ -415,7 +412,25 @@ h1 {
   font-weight: bold;
   margin: 5px 30px;
 }
-#accueil_part_2 div {
+#accueil_part_2 .accueil_part_2_cartes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+@media (orientation: portrait) {
+  #accueil_part_2 .accueil_part_2_cartes {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 auto;
+  }
+}
+#accueil_part_2 .accueil_part_2_cartes div {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -425,7 +440,7 @@ h1 {
       -ms-flex-direction: row;
           flex-direction: row;
   gap: 10%;
-  margin: 0 auto;
+  margin: 30px;
   background-color: #f6f6f6;
   height: 80px;
   width: 85%;
@@ -434,7 +449,12 @@ h1 {
           box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
 }
-#accueil_part_2 div .bulle {
+@media (orientation: portrait) {
+  #accueil_part_2 .accueil_part_2_cartes div {
+    margin: 10px auto;
+  }
+}
+#accueil_part_2 .accueil_part_2_cartes div .bulle {
   font-family: "Roboto", sans-serif;
   background-color: #9356dc;
   border-radius: 50%;
@@ -452,25 +472,16 @@ h1 {
           align-items: center;
   color: white;
   top: 23px;
-  left: -15px;
+  left: -10px;
 }
-#accueil_part_2 div p:last-child {
+#accueil_part_2 .accueil_part_2_cartes div p:last-child {
+  overflow: hidden;
+  white-space: inherit;
+  text-overflow: ellipsis;
   margin-left: 40px;
   line-height: 75px;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
-}
-#accueil_part_2 div #txt_accueil_part_2_1::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f81d";
-}
-#accueil_part_2 div #txt_accueil_part_2_2::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f81d";
-}
-#accueil_part_2 div #txt_accueil_part_2_3::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f81d";
 }
 
 #accueil_part_3 h2 {
@@ -483,13 +494,26 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  margin: 30px;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   gap: 20px;
 }
+@media (orientation: portrait) {
+  #accueil_part_3 #container_carte {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 auto;
+  }
+}
 #accueil_part_3 #container_carte .carte {
+  opacity: 0;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
   display: block;
   margin: 0 auto;
   background-color: white;
@@ -499,6 +523,9 @@ h1 {
   width: 85%;
   -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+#accueil_part_3 #container_carte .carte a {
+  text-decoration: none;
 }
 #accueil_part_3 #container_carte .carte .img_carte {
   border-top-left-radius: 10px;
@@ -523,11 +550,13 @@ h1 {
   background-size: cover;
 }
 #accueil_part_3 #container_carte .carte h4 {
+  color: black;
   margin: 10px 0 0 5px;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
 }
 #accueil_part_3 #container_carte .carte p {
+  color: black;
   margin: 5px 0 0 5px;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -539,11 +568,217 @@ h1 {
   font-size: 30px;
   border: none;
 }
-#accueil_part_3 #container_carte .carte button::hover {
+#accueil_part_3 #container_carte .carte button i:hover {
+  background-color: linear-gradient(#ff66cc, #9966cc);
   font-weight: bold;
-  color: red;
+  -webkit-animation-name: i_hover;
+          animation-name: i_hover;
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes i_hover {
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes i_hover {
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+#accueil_part_3 #container_carte .carte:nth-of-type(1) {
+  -webkit-animation-name: carte_menu_apparition;
+          animation-name: carte_menu_apparition;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+#accueil_part_3 #container_carte .carte:nth-of-type(2) {
+  -webkit-animation-name: carte_menu_apparition;
+          animation-name: carte_menu_apparition;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+#accueil_part_3 #container_carte .carte:nth-of-type(3) {
+  -webkit-animation-name: carte_menu_apparition;
+          animation-name: carte_menu_apparition;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+#accueil_part_3 #container_carte .carte:nth-of-type(4) {
+  -webkit-animation-name: carte_menu_apparition;
+          animation-name: carte_menu_apparition;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes carte_menu_apparition {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+@keyframes carte_menu_apparition {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
 }
 
+.loader {
+  position: fixed;
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  -webkit-animation: loader 1.2s forwards;
+          animation: loader 1.2s forwards;
+}
+
+.lds_ring {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+  margin-top: calc(50% - 40px);
+}
+
+.lds_ring div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #000;
+  border-radius: 50%;
+  -webkit-animation: lds_ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) 2 forwards;
+          animation: lds_ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) 2 forwards;
+  border-color: #000 transparent transparent transparent;
+}
+
+.lds_ring div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+          animation-delay: -0.45s;
+}
+
+.lds_ring div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+.lds_ring div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
+}
+
+@-webkit-keyframes lds_ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes lds_ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes loader {
+  90% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+@keyframes loader {
+  90% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
 footer {
   background-color: #353535;
   padding: 18px 0 18px 18px;
