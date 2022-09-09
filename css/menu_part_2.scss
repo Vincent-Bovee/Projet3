@@ -7,6 +7,26 @@ h2{
         font-family: 'Font Awesome 5 Free';
         font-size: 25px;
         font-weight: 100;
+        &:hover{
+            animation-name: i_hover;
+            animation-duration: 0.75s;
+            animation-timing-function: ease;
+            animation-iteration-count: 1;   
+            animation-fill-mode: forwards;
+            font-weight: bold;
+            transform: scale(1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: -webkit-linear-gradient(#ff66cc, #9966cc);
+            @keyframes i_hover {
+                50% {
+                    transform: scale(1.2);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+        }
     }
 }
 
@@ -83,35 +103,54 @@ h2{
             transform: translateY(0px);
         }
     }
-    .carte_menu{
+    li.carte_menu{
         width: auto;
+        overflow: hidden;
         margin: 10px;
         border-radius: 10px;
         background-color: white;
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, 0.2);
         display: flex;
-        flex-direction: row;    
-        justify-content: space-between;
+        flex-direction: row;
+        cursor: pointer;
 
+        opacity: 0;
+        transform: translateY(10px);
+        animation-name: carte_menu_apparition;
+        animation-duration: 1s;
+        animation-delay: 0.5s;
+        animation-timing-function: ease;
+        animation-iteration-count: 1;   
+        animation-fill-mode: forwards;
+
+        &:first-of-type {
+            animation-delay: 0s;
+        }
+        &:nth-of-type(3) {
+            animation-delay: 1s;
+        }
+        &:nth-of-type(4) {
+            animation-delay: 1.5s;
+        }
 
         &:hover{
-            .contenu{
-                animation-name: carte_menu_hover;
-                animation-duration: 0.35s;
-                animation-timing-function: ease;
-                animation-iteration-count: 1;   
-                animation-fill-mode: forwards;
-            }
+             .contenu{
+                 animation-name: carte_menu_hover;
+                 animation-duration: 1s;
+                 animation-timing-function: ease;
+                 animation-iteration-count: 1;   
+                 animation-fill-mode: forwards;
+             }
             .icon{
                 animation-name: icon_hover;
-                animation-duration: 0.35s;
+                animation-duration: 1s;
                 animation-timing-function: ease;
                 animation-iteration-count: 1;   
                 animation-fill-mode: forwards;
             }
             i{
                 animation-name: check;
-                animation-duration: 0.5s;
+                animation-duration: 1s;
                 animation-timing-function: ease;
                 animation-iteration-count: 1;   
                 animation-fill-mode: forwards;
@@ -119,16 +158,21 @@ h2{
             }
         }    
         .contenu{
-            width: 95%;
+            width: 80%;
+            height: 30px;
             padding: 5px 10px;
-            display: flex;
-            flex-direction: column;    
             .nom_du_menu{
+                overflow: hidden;
+                text-overflow: ellipsis; 
+                white-space: nowrap;
                 font-family: 'Roboto', sans-serif;
                 font-weight: 600;
                 font-size: 14px;
             }
             .description_du_menu{
+                overflow: hidden;
+                text-overflow: ellipsis; 
+                white-space: nowrap;
                 font-family: 'Roboto', sans-serif;
                 font-weight: 300;
                 font-size: 12px;
@@ -136,29 +180,33 @@ h2{
             }
         }
         .prix_du_menu{
-            width: 40px;
+            text-align: center;
+            width: calc(20% - 20px);
             margin-top: 12px;
             font-family: 'Roboto', sans-serif;
             font-weight: 600;
             font-size: 14px;
         }
         .icon{
-            width: 0%;
-            position: relative;
+            width: 40px;
+            height: 30px;
+            padding: 5px 0;
+            position: absolute;
+            top: 0;
+            right: -40px;
             display: flex;
             justify-content: center;
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
             background-color: #99e2d0;
-            overflow: hidden;
     
             i{
-                width: 15px;
-                height: 15px;
+                width: 10px;
+                height: 10px;
                 position: absolute;
                 display: inline-flex;
                 align-items: center;
-                top: 15%;
+                top: 10px;
                 color: white;
                 font-family: 'Font Awesome 5 Free';
                 font-size: 15px;
@@ -170,30 +218,37 @@ h2{
         }
     }
 }
-
-button{
-    display: block;
-    margin: 30px auto;
-    text-align: center;
-    background: linear-gradient(#ff66cc, #9966cc);
-    border: none;
-    padding: 15px;
-    font-size: 18px;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    border-radius: 25px;
-    width: 150px;
+a{
+    text-decoration: none;
+    button{
+        display: block;
+        margin: 30px auto;
+        text-align: center;
+        background: linear-gradient(#ff66cc, #9966cc);
+        border: none;
+        padding: 15px;
+        font-size: 18px;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        border-radius: 25px;
+        width: 150px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
 }
+
+
 
 
 @keyframes carte_menu_hover {
     100%{
-        width: 80%;
+        width: calc(80% - 40px);
     }
 }
 @keyframes icon_hover {
     100%{
-        width: 15%;
+        right: 0;
     }
 }
 @keyframes check {

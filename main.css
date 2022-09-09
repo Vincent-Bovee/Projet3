@@ -353,6 +353,9 @@ section {
 footer {
   margin: 50px 0 0 0;
 }
+footer a {
+  text-decoration: none;
+}
 
 h1 {
   text-align: center;
@@ -366,6 +369,9 @@ h1 {
 #accueil_part_1 {
   background-color: #f6f6f6;
   padding-bottom: 20px;
+}
+#accueil_part_1 #accueil_part_1_1 {
+  margin-top: -30px;
 }
 #accueil_part_1 #accueil_part_1_1 p {
   text-align: center;
@@ -391,7 +397,10 @@ h1 {
   color: #7d7d7d;
   margin-bottom: 20px;
 }
-#accueil_part_1 #accueil_part_1_2 button {
+#accueil_part_1 #accueil_part_1_2 a {
+  text-decoration: none;
+}
+#accueil_part_1 #accueil_part_1_2 a button {
   display: block;
   margin: 0 auto;
   text-align: center;
@@ -404,6 +413,9 @@ h1 {
   font-family: "Roboto", sans-serif;
   border-radius: 25px;
   width: 250px;
+}
+#accueil_part_1 #accueil_part_1_2 a button:hover {
+  cursor: pointer;
 }
 
 #accueil_part_2 h2 {
@@ -517,7 +529,6 @@ h1 {
   display: block;
   margin: 0 auto;
   background-color: white;
-  padding: 5px;
   border-radius: 15px;
   height: 250px;
   width: 85%;
@@ -533,29 +544,41 @@ h1 {
   width: 100%;
   height: 78%;
 }
+#accueil_part_3 #container_carte .carte .nouveau {
+  position: absolute;
+  width: 80px;
+  top: 20px;
+  right: 7%;
+  background-color: #99cccc;
+  color: #33cc99;
+  text-align: center;
+  padding: 3px 0;
+}
 #accueil_part_3 #container_carte .carte #restaurants_img1 {
-  background: url(/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg) repeat center center;
+  background: url(images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg) repeat center center;
   background-size: cover;
 }
 #accueil_part_3 #container_carte .carte #restaurants_img2 {
-  background: url(/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg) repeat center center;
+  background: url(images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg) repeat center center;
   background-size: cover;
 }
 #accueil_part_3 #container_carte .carte #restaurants_img3 {
-  background: url(/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg) repeat center center;
+  background: url(images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg) repeat center center;
   background-size: cover;
 }
 #accueil_part_3 #container_carte .carte #restaurants_img4 {
-  background: url(/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg) repeat center center;
+  background: url(images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg) repeat center center;
   background-size: cover;
 }
 #accueil_part_3 #container_carte .carte h4 {
+  padding-left: 5px;
   color: black;
   margin: 10px 0 0 5px;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
 }
 #accueil_part_3 #container_carte .carte p {
+  padding-left: 5px;
   color: black;
   margin: 5px 0 0 5px;
   font-family: "Roboto", sans-serif;
@@ -564,13 +587,13 @@ h1 {
 #accueil_part_3 #container_carte .carte button {
   float: right;
   margin-top: -40px;
+  margin-right: 10px;
   font-family: "Font Awesome 5 Free";
   font-size: 30px;
   border: none;
+  font-weight: normal;
 }
 #accueil_part_3 #container_carte .carte button i:hover {
-  background-color: linear-gradient(#ff66cc, #9966cc);
-  font-weight: bold;
   -webkit-animation-name: i_hover;
           animation-name: i_hover;
   -webkit-animation-duration: 0.75s;
@@ -581,6 +604,12 @@ h1 {
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+  font-weight: bold;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: -webkit-linear-gradient(#ff66cc, #9966cc);
 }
 @-webkit-keyframes i_hover {
   50% {
@@ -605,8 +634,8 @@ h1 {
 #accueil_part_3 #container_carte .carte:nth-of-type(1) {
   -webkit-animation-name: carte_menu_apparition;
           animation-name: carte_menu_apparition;
-  -webkit-animation-delay: 2.5s;
-          animation-delay: 2.5s;
+  -webkit-animation-delay: 1.25s;
+          animation-delay: 1.25s;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-timing-function: ease;
@@ -619,8 +648,8 @@ h1 {
 #accueil_part_3 #container_carte .carte:nth-of-type(2) {
   -webkit-animation-name: carte_menu_apparition;
           animation-name: carte_menu_apparition;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  -webkit-animation-delay: 1.75s;
+          animation-delay: 1.75s;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-timing-function: ease;
@@ -633,8 +662,8 @@ h1 {
 #accueil_part_3 #container_carte .carte:nth-of-type(3) {
   -webkit-animation-name: carte_menu_apparition;
           animation-name: carte_menu_apparition;
-  -webkit-animation-delay: 3.5s;
-          animation-delay: 3.5s;
+  -webkit-animation-delay: 2.25s;
+          animation-delay: 2.25s;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-timing-function: ease;
@@ -647,8 +676,8 @@ h1 {
 #accueil_part_3 #container_carte .carte:nth-of-type(4) {
   -webkit-animation-name: carte_menu_apparition;
           animation-name: carte_menu_apparition;
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
+  -webkit-animation-delay: 2.75s;
+          animation-delay: 2.75s;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-timing-function: ease;
@@ -699,7 +728,7 @@ h1 {
   margin: 0 auto;
   width: 80px;
   height: 80px;
-  margin-top: calc(50% - 40px);
+  margin-top: calc(50vh - 40px);
 }
 
 .lds_ring div {

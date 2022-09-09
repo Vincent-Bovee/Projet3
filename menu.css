@@ -351,6 +351,15 @@ h1 {
   font-family: "Shrikhand", cursive;
 }
 
+#fleche {
+  position: absolute;
+  margin-top: -58px;
+  margin-left: 20px;
+}
+#fleche i {
+  font-size: 35px;
+}
+
 #titre {
   font-family: "Roboto", sans-serif;
 }
@@ -358,7 +367,7 @@ h1 {
 #menu_part_1 #img_menu_part_1 {
   width: auto;
   height: 400px;
-  background: url(/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg) repeat center center;
+  background: url(images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg) repeat center center;
   background-size: cover;
   z-index: 1;
 }
@@ -373,6 +382,44 @@ h2 i {
   font-family: "Font Awesome 5 Free";
   font-size: 25px;
   font-weight: 100;
+}
+h2 i:hover {
+  -webkit-animation-name: i_hover;
+          animation-name: i_hover;
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  font-weight: bold;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: -webkit-linear-gradient(#ff66cc, #9966cc);
+}
+@-webkit-keyframes i_hover {
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes i_hover {
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 #menu_part_2 {
@@ -646,8 +693,9 @@ h2 i {
             transform: translateY(0px);
   }
 }
-#menu_part_2 .carte_menu {
+#menu_part_2 li.carte_menu {
   width: auto;
+  overflow: hidden;
   margin: 10px;
   border-radius: 10px;
   background-color: white;
@@ -660,15 +708,40 @@ h2 i {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-animation-name: carte_menu_apparition;
+          animation-name: carte_menu_apparition;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
-#menu_part_2 .carte_menu:hover .contenu {
+#menu_part_2 li.carte_menu:first-of-type {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+#menu_part_2 li.carte_menu:nth-of-type(3) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+#menu_part_2 li.carte_menu:nth-of-type(4) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+#menu_part_2 li.carte_menu:hover .contenu {
   -webkit-animation-name: carte_menu_hover;
           animation-name: carte_menu_hover;
-  -webkit-animation-duration: 0.35s;
-          animation-duration: 0.35s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-iteration-count: 1;
@@ -676,11 +749,11 @@ h2 i {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
-#menu_part_2 .carte_menu:hover .icon {
+#menu_part_2 li.carte_menu:hover .icon {
   -webkit-animation-name: icon_hover;
           animation-name: icon_hover;
-  -webkit-animation-duration: 0.35s;
-          animation-duration: 0.35s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-iteration-count: 1;
@@ -688,11 +761,11 @@ h2 i {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
-#menu_part_2 .carte_menu:hover i {
+#menu_part_2 li.carte_menu:hover i {
   -webkit-animation-name: check;
           animation-name: check;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-iteration-count: 1;
@@ -702,38 +775,43 @@ h2 i {
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
 }
-#menu_part_2 .carte_menu .contenu {
-  width: 95%;
+#menu_part_2 li.carte_menu .contenu {
+  width: 80%;
+  height: 30px;
   padding: 5px 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
-#menu_part_2 .carte_menu .contenu .nom_du_menu {
+#menu_part_2 li.carte_menu .contenu .nom_du_menu {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   font-size: 14px;
 }
-#menu_part_2 .carte_menu .contenu .description_du_menu {
+#menu_part_2 li.carte_menu .contenu .description_du_menu {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 12px;
   color: #404040;
 }
-#menu_part_2 .carte_menu .prix_du_menu {
-  width: 40px;
+#menu_part_2 li.carte_menu .prix_du_menu {
+  text-align: center;
+  width: calc(20% - 20px);
   margin-top: 12px;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   font-size: 14px;
 }
-#menu_part_2 .carte_menu .icon {
-  width: 0%;
-  position: relative;
+#menu_part_2 li.carte_menu .icon {
+  width: 40px;
+  height: 30px;
+  padding: 5px 0;
+  position: absolute;
+  top: 0;
+  right: -40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -743,11 +821,10 @@ h2 i {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   background-color: #99e2d0;
-  overflow: hidden;
 }
-#menu_part_2 .carte_menu .icon i {
-  width: 15px;
-  height: 15px;
+#menu_part_2 li.carte_menu .icon i {
+  width: 10px;
+  height: 10px;
   position: absolute;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -755,7 +832,7 @@ h2 i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  top: 15%;
+  top: 10px;
   color: white;
   font-family: "Font Awesome 5 Free";
   font-size: 15px;
@@ -765,7 +842,10 @@ h2 i {
   color: #99e2d0;
 }
 
-button {
+a {
+  text-decoration: none;
+}
+a button {
   display: block;
   margin: 30px auto;
   text-align: center;
@@ -779,26 +859,29 @@ button {
   border-radius: 25px;
   width: 150px;
 }
+a button:hover {
+  cursor: pointer;
+}
 
 @-webkit-keyframes carte_menu_hover {
   100% {
-    width: 80%;
+    width: calc(80% - 40px);
   }
 }
 
 @keyframes carte_menu_hover {
   100% {
-    width: 80%;
+    width: calc(80% - 40px);
   }
 }
 @-webkit-keyframes icon_hover {
   100% {
-    width: 15%;
+    right: 0;
   }
 }
 @keyframes icon_hover {
   100% {
-    width: 15%;
+    right: 0;
   }
 }
 @-webkit-keyframes check {
