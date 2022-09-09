@@ -355,6 +355,8 @@ h1 {
   position: absolute;
   margin-top: -58px;
   margin-left: 20px;
+  color: #000;
+  text-decoration: none;
 }
 #fleche i {
   font-size: 35px;
